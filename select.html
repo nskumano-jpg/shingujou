@@ -84,6 +84,15 @@ h1 {
 </style>
 </head>
 
+  /* ▼ 強制・最終レイアウト指定 */
+.container {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 <body>
 
 <div class="container">
