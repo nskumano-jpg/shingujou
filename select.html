@@ -14,6 +14,39 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
 }
+  
+  .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.btn-image {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.label {
+  margin-top: 14px;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+}
+
 
 h1 {
   text-align: center;
@@ -53,15 +86,22 @@ h1 {
 <body>
 
 <div class="container">
+
   <div class="card" onclick="location.href='video1.html'">
-    出丸
+    <img src="botan01.png" class="btn-image">
+    <div class="label">出丸</div>
   </div>
+
   <div class="card" onclick="location.href='video2.html'">
-    搦手門
+    <img src="botan02.png" class="btn-image">
+    <div class="label">搦手門</div>
   </div>
+
   <div class="card" onclick="location.href='video3.html'">
-    天守
+    <img src="botan03.png" class="btn-image">
+    <div class="label">天守</div>
   </div>
+
 </div>
 
 </body>
