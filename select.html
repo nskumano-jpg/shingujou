@@ -6,86 +6,57 @@
 <title>動画選択</title>
 
 <style>
+/* 画面ど真ん中 */
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-}
-  
-.container {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
+/* 横3つ */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* カードは完全透明 */
 .card {
-  background: transparent;
-  box-shadow: none;
+  background: none;
   padding: 0;
   text-align: center;
   cursor: pointer;
 }
 
+/* 丸ボタン本体 */
 .btn-image {
-  width: 100%;
-  max-width: 220px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.25s ease;
 }
 
+/* ホバー効果は画像だけ */
+.card:hover .btn-image {
+  transform: scale(1.08);
+}
+
+/* 文字 */
 .label {
   margin-top: 14px;
   color: #fff;
-}
-
-
-h1 {
-  text-align: center;
-  padding: 30px 10px;
-  font-size: 1.5rem;
-  letter-spacing: 0.1em;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 0 20px;
-}
-
-.card {
-  background: #1a1a1a;
-  border-radius: 16px;
-  padding: 30px;
-  text-align: center;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.03);
-  background: #222;
-}
-
-.card:active {
-  transform: scale(0.98);
+  font-size: 1rem;
 }
 </style>
 </head>
-
-  /* ▼ 強制・最終レイアウト指定 */
-.container {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
-}
 
 <body>
 
@@ -105,3 +76,6 @@ h1 {
     <div class="label">天守</div>
   </div>
 </div>
+
+</body>
+</html>
