@@ -6,26 +6,46 @@
 <title>動画選択</title>
 
 <style>
-/* 画面ど真ん中 */
+/* ===== 全体 ===== */
 body {
   margin: 0;
   min-height: 100vh;
+  background: #000;
+  color: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-image: url("background.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
-/* 横3つ */
+/* ===== 見出し ===== */
+.header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+}
+
+.header p {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+/* ===== ボタンエリア ===== */
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 100px;
+  padding-bottom: 40px;
 }
 
-/* カードは完全透明 */
+/* カード */
 .card {
   background: none;
   padding: 0;
@@ -33,10 +53,10 @@ body {
   cursor: pointer;
 }
 
-/* 丸ボタン本体 */
+/* 丸ボタン */
 .btn-image {
   width: 240px;
-  height: 220px;
+  height: 240px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
@@ -44,25 +64,43 @@ body {
   transition: transform 0.25s ease;
 }
 
-/* ホバー効果は画像だけ */
 .card:hover .btn-image {
   transform: scale(1.08);
 }
 
-/* 文字 */
+/* ラベル */
 .label {
   margin-top: 16px;
-  font-size: 2rem;
+  font-size: 1.2rem;
   letter-spacing: 0.1em;
-  color: #fff;
   text-align: center;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
-  
+
+/* ===== スマホ対応 ===== */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .btn-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+}
 </style>
 </head>
 
 <body>
+
+<div class="header">
+  <h1>新宮城本丸</h1>
+  <p>ご覧になりたい動画を選択してください</p>
+</div>
 
 <div class="container">
   <div class="card" onclick="location.href='video1.html'">
@@ -70,16 +108,4 @@ body {
     <div class="label">出丸</div>
   </div>
 
-  <div class="card" onclick="location.href='video2.html'">
-    <img src="botan02.png" class="btn-image">
-    <div class="label">搦手門</div>
-  </div>
-
-  <div class="card" onclick="location.href='video3.html'">
-    <img src="botan03.png" class="btn-image">
-    <div class="label">天守</div>
-  </div>
-</div>
-
-</body>
-</html>
+  <div class="card" onclick="location.href='
